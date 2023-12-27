@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Merriweather|Playfair+Display|Langar|Trade+Winds|Ubuntu&display=swap" rel="stylesheet">
-    <link href="dw.css" rel="stylesheet" type="text/css">
+    <title>URL Text Display</title>
+    <script>
+        // Function to extract text from the URL
+        function getTextFromURL() {
+            // Get the full URL
+            var url = window.location.href;
+
+            // Split the URL based on '/'
+            var urlParts = url.split('/');
+
+            // Get the last part of the URL (yourtext in your example)
+            var text = urlParts[urlParts.length - 1];
+
+            // Decode the text (replace %20 with space, etc.)
+            text = decodeURIComponent(text);
+
+            // Update the content of the element with id "displayText"
+            document.getElementById('displayText').innerText = text;
+        }
+
+        // Call the function when the page loads
+        window.onload = getTextFromURL;
+    </script>
 </head>
 <body>
-    <h1>Display Page</h1>
-    <p>Text from the URL: <span id="displayText"></span></p>
-    <script src="script.js"></script>
+    <h1>Text from URL:</h1>
+    <p id="displayText"></p>
 </body>
 </html>

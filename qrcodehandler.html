@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Demo</title>
+    <script>
+        // Function to get the text from the URL
+        function getTextFromURL() {
+            // Get the full URL of the page
+            var url = window.location.href;
+
+            // Extract the text from the URL (assuming the text is after the last '/')
+            var text = decodeURIComponent(url.substring(url.lastIndexOf('/') + 1));
+
+            // Display the text on the webpage
+            document.getElementById('displayText').innerText = text;
+        }
+    </script>
+</head>
+<body onload="getTextFromURL()">
+    <h1>QR Code Demo</h1>
+    <p>Text from the URL: <span id="displayText"></span></p>
+</body>
+</html>

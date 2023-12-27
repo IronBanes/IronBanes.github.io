@@ -11,14 +11,6 @@
 <body>
     <h1>Display Page</h1>
     <p>Text from the URL: <span id="displayText"></span></p>
-    <script>
-        // Function to get the text from the URL
-        function getTextFromURL() {
-            var pathArray = window.location.pathname.split('/');
-            var text = pathArray[pathArray.length - 1];
-            document.getElementById('displayText').innerText = text;
-        }
-        getTextFromURL();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
